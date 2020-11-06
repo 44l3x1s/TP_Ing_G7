@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>Mostrar Mapa</title>
+	<title>Buscador de Cuadro</title>
 	<!--JQUERY-->
     <script src="jquery-3.1.1.min.js"></script>
 	<!--LEAFLET-->    
@@ -10,43 +10,57 @@
     <script src="./leaflet/leaflet.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="./stylo.css">
-	<script src="./js/mapCreation.js"></script>
-	<script src="./js/drawer.js"></script>
-
-
+	<script src="./js/cuadros.js"></script>
+	<script src="./js/main_c.js"></script>
 
 </head>
-<body background="./leaflet/images/cuadro.jpg">
-	<div id="mapid">
-		
+<body >
+	<div id="mybox">
+		<table>
+			<thead>
+			  <tr id="atr">
+	              <td>Nombre</td>
+	              <td>Autor</td>
+	              <td>tipo</td>
+                  <td id="g">Imagen</td>
+  
+          	  </tr>
+          	</thead>
+		     <tbody id="mybody">
+
+		     </tbody>     	  
+
+		</table>	
+
 	</div>
+
 	<!--formulario-->
-	<div id="mymap">
+	<div id="myform">
 		<form action="/my-handling-form-page" method="post">
 			 <ul>
 			 	<h2 id="h1">Busqueda de Cuadros</h2>
 			 	<label for="nombre">Nombre</label>
-					<input type="text" name="nombre" id="nombre" placeholder="nombre del cuadro" required />
+					<input type="text" name="nombre" id="nombre" placeholder="nombre del cuadro" />
 
 					<label for="autor">Autor</label>
 					<input type="text" name="autor" id="autor" placeholder="ingrese autor"/>
 
 					<label for="publicacion" />Fecha de publicacion</label>
-					<input type="text" name="publicacion" id="publicacion" placeholder="dd/mm/1999" />
+					<input type="date" name="publicacion" id="publicacion" placeholder="dd/mm/aaaa" />
   
 					  <p>
 					    Tipo:
-					    <select name="tipo">
+					    <select name="tipo" id="tipo">
+					      <option>Ninguna</option>
 					      <option>Original</option>
 					      <option>Copia</option>
 					    </select>
 					  </p>
 
-					<label for="mensaje">Detalle</label>
-					<textarea name="mensaje" for="mensaje" placeholder="describe brevemente en menos de 300 carácteres" maxlength="300"></textarea>
+					<button type="button" id="boton1" onclick="comparar()">Search</button>
 					
-					<input type="submit" name="enviar" value="buscar cuadro"/>
-			 </ul>
+
+			</ul>
 			
 		</form>
 		
