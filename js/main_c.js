@@ -33,21 +33,24 @@ contenido.innerHTML = " ";
 	for(var item of arreglo ){
 
 		let imagen = document.createElement("img");
-		let encabezado = document.createElement("h1");
-		let autor = document.createElement("h2");
-		let tipo = document.createElement("h3");
-		encabezado.innerText = item.nombre; 
-		autor.innerText = item.autor;
-		tipo.innerText = item.tipo;
+		let nombre = document.createElement("p");
+		let autor = document.createElement("p");
+		let tipo = document.createElement("p");
+		
+		nombre.innerText = "nombre: "+item.nombre; 
+		autor.innerText = "autor: "+item.autor;
+		tipo.innerText = "tipo: "+item.tipo;
 			
 
 		imagen.setAttribute("src",item.imagen);
-
+		//h2.setAttribute("ssss");
 		//inyecto en el dom
-		contenido.appendChild(encabezado);
+		contenido.appendChild(imagen);
+		contenido.appendChild(nombre);
 		contenido.appendChild(autor);
 		contenido.appendChild(tipo);
-		contenido.appendChild(imagen);
+		//contenido.appendChild(tipo);
+		//contenido.appendChild(imagen);
 	}
 
 
